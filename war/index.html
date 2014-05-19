@@ -2,12 +2,24 @@
 <html ng-app="myapp">
 
 <head>
-    <title>Olivia Uhlar</title>
-    <!-- Bootstrap CSS -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link data-require="bootstrap-css@*" data-semver="3.0.0" rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" />
-    <script data-require="angular.js@1.1.x" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.1.5/angular.js" data-semver="1.1.5"></script>
-    <script data-require="ui-bootstrap@0.5.0" data-semver="0.5.0" src="http://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.6.0.js"></script>    
+  <title>Olivia Uhlar</title>
+  
+    
+  <!-- Angular -->
+<!--   <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.4/angular.js"></script> -->
+  <script type="text/javascript" src="bower_components/angular/angular.js"></script>
+  
+  <!-- Bootstrap CSS -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link data-require="bootstrap-css@*" data-semver="3.0.0" rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" />    
+  <script data-require="ui-bootstrap@0.5.0" data-semver="0.5.0" src="http://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.6.0.js"></script>
+  
+  <!-- UI-Router -->  
+  <script type="text/javascript" src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+  <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false?callback=onGoogleReady"></script>
+  <!-- App Script --> 
+  <script src="jvMap.js"></script>
+  <script src="script.js"></script>
 </head>
 
 <body class="container">
@@ -38,17 +50,5 @@
       <div ui-view></div>
     </div>
   </div>         
-  
-  <!-- Angular -->
-  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.4/angular.js"></script>
-  <!-- UI-Router -->
-  <script src="//angular-ui.github.io/ui-router/release/angular-ui-router.js"></script>
-  
-  <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
-  
-  <!-- App Script --> 
-  <script src="script.js"></script>
-
 </body>
-
 </html>

@@ -1,6 +1,2 @@
 /* Styles go here */
-.map {
-    height: 700px;
-    width: 700px;
-    margin: auto;
-}
+.map-canvas { height: 400px; }

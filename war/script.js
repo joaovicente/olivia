@@ -1,4 +1,4 @@
-    var myapp = angular.module('myapp', ["ui.router"])
+    var myapp = angular.module('myapp', ["ui.router", "myControllers"])
     myapp.config(function($stateProvider, $urlRouterProvider){
       
       // For any unmatched url, send to /route1
@@ -8,9 +8,7 @@
         .state('route1', {
             url: "/route1",
             templateUrl: "route1.html",
-            controller: function($scope){
-            	$scope.title = 'BBBBB';
-            }
+            controller: "MapCtrl"
         })
           
         .state('route2', {
