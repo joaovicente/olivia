@@ -5,8 +5,8 @@
       <!--In addition to creating the markers on the map, div elements with existing google.maps.Marker object should be created to hook up with events -->
       <div ng-repeat="marker in myMarkers" ui-map-marker="myMarkers[$index]" ui-event="{'map-click':'showMarkerInfo(marker)'}"></div>
       <div ui-map-info-window="myInfoWindow">
-        <h1>{{markerName}}</h1>
-        <img width='254' height='355' src={{markerUrl}}>
+        <h1>{{currentMapInfoWindowName}}</h1>
+        <img width='254' height='355' src={{currentMapInfoWindowImg}}>
       </div>
     </div>
   </div>
