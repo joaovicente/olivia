@@ -4,9 +4,14 @@ function onGoogleReady() {
 
 var myControllers = angular.module('myControllers', []);
 
-myControllers.controller('MapCtrl', ['$scope',
-  function($scope)	{
+myControllers.controller('MapCtrl', ['$scope', '$http',
+  function($scope, $http)	{
+    // Get geoAartworks
+    $http.get('geoArtworks.json').success(function(data) {
+        $scope.geoArtworks= data;
+      });
     // Base map properties
+	// TODO: Derive map center from center point across all geo geoArtworks locations 
     var ll = new google.maps.LatLng(53.4137833,-7.7650354);
     $scope.mapOptions = {
       center: ll,
@@ -14,7 +19,9 @@ myControllers.controller('MapCtrl', ['$scope',
       mapTypeId: google.maps.MapTypeId.ROADMAP
     };
     
+    
     $scope.addMarker = function(g)	{
+    	console.log(g);
     	if ($scope.myMarkers === undefined){
     		$scope.myMarkers = [];
     	}
@@ -34,22 +41,12 @@ myControllers.controller('MapCtrl', ['$scope',
     
     //Markers should be added after map is loaded	
     $scope.onMapIdle = function() {
-        if ($scope.myMarkers === undefined){    
-    	 $scope.addMarker({
-    	    	name: "Stars and Stones",
-    	    	imgMarkerUrl:  'http://homepage.eircom.net/~oliviauhlar/Stars_and_Stones_I.jpg',
-    	    	imgPreviewUrl:  'http://homepage.eircom.net/~oliviauhlar/Stars_and_Stones_I.jpg',
-    	    	lat: 52.972536,
-    	    	long: -6.007645});
-    	 
-    	 $scope.addMarker({
- 	    	name: "Stars and Stones II",
- 	    	imgMarkerUrl:  'http://homepage.eircom.net/~oliviauhlar/Stars_and_Stones_II.jpg',
- 	    	imgPreviewUrl:  'http://homepage.eircom.net/~oliviauhlar/Stars_and_Stones_II.jpg',
- 	    	lat: 54.349013,
- 	    	long: -8.679355});
+        if ($scope.myMarkers === undefined){
+         for (var i in $scope.geoArtworks)	{
+        	 $scope.addMarker($scope.geoArtworks[i]);
+         }
         }
-        //console.log($scope.myMarkers)
+        console.log($scope.geoArtworks);
     };
     $scope.showMarkerInfo = function(marker) {  
         $scope.currentMapInfoWindowName = marker.mapInfoWindowName;
