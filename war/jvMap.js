@@ -19,7 +19,6 @@ myControllers.controller('MapCtrl', ['$scope', '$http',
       mapTypeId: google.maps.MapTypeId.ROADMAP
     };
     
-    
     $scope.addMarker = function(g)	{
     	console.log(g);
     	if ($scope.myMarkers === undefined){
