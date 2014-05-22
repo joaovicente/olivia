@@ -19,8 +19,8 @@
   <script type="text/javascript" src="bower_components/angular-ui-map/ui-map.js"></script>
   <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false?callback=onGoogleReady"></script>
   <!-- App Script --> 
-  <script src="script.js"></script>
-  <script src="jvMap.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/controllers.js"></script>
 </head>
 
 <body class="container" style="height:100%;width:100%">
@@ -39,8 +39,8 @@
       </div>
       <div class="collapse navbar-collapse" ng-class="!navCollapsed && 'in'">
         <ul class="nav navbar-nav">
-          <li class="active"><a ui-sref="route1">Irish coast</a></li>
-          <li class><a ui-sref="route2">Gallery</a></li>
+          <li class="active"><a ui-sref="map">Irish coast</a></li>
+          <li class><a ui-sref="gallery">Gallery</a></li>
         </ul>
       </div>
     </div>

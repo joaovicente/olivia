@@ -2,18 +2,18 @@
     myapp.config(function($stateProvider, $urlRouterProvider){
       
       // For any unmatched url, send to /route1
-      $urlRouterProvider.otherwise("/route1")
+      $urlRouterProvider.otherwise("/map")
       
       $stateProvider
-        .state('route1', {
-            url: "/route1",
-            templateUrl: "route1.html",
+        .state('map', {
+            url: "/map",
+            templateUrl: "partials/map.html",
             controller: "MapCtrl"
         })
           
-        .state('route2', {
-            url: "/route2",
-            templateUrl: "route2.html",
+        .state('gallery', {
+            url: "/gallery",
+            templateUrl: "partials/gallery.html",
             controller: function($scope){
             	$scope.title = "Gallery"
             	$scope.paintings = 

@@ -7,7 +7,7 @@ var myControllers = angular.module('myControllers', []);
 myControllers.controller('MapCtrl', ['$scope', '$http',
   function($scope, $http)	{
     // Get geoAartworks
-    $http.get('geoArtworks.json').success(function(data) {
+    $http.get('data/geoArtworks.json').success(function(data) {
         $scope.geoArtworks= data;
       });
     // Base map properties
